@@ -12,20 +12,21 @@
             <li><a href="#connect">Connect With Me</a></li>
             <li><a href="#hobbies">Hobbies & Goals</a></li>
             <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#comment">Comment</a></li>
           </ul>
         </nav>
   
         <div class="grid-container">
-          <div class="item1" id="about">
+          <div class="content-box" id="about">
             <h1>Personal Profile Web Page</h1>
           </div>
-          <div class="item2" id="connect">
+          <div class="content-box" id="connect">
             <h2>Connect With Me</h2>
             <p>You can find me on 
               <a href="https://www.linkedin.com/in/luis-lazaro-b626a8286/" target="_blank">LinkedIn</a>.
             </p>
           </div>
-          <div class="item3">
+          <div class="content-box">
             <h2>About Me</h2>
             <p>I am Luis Lorenzo D. Lazaro.</p>
             <p>I am currently enrolled at Asia Pacific College in BSCS-SF231. I live in Marikina City.</p>
@@ -42,7 +43,7 @@
               <li>Completed a course in Code Combat.</li>
             </ul>
           </div>
-          <div class="item4" id="hobbies">
+          <div class="content-box" id="hobbies">
             <h3>Hobbies and Goals</h3>
             <table>
               <thead>
@@ -67,7 +68,7 @@
               </tbody>
             </table>
           </div>
-          <div class="item5" id="gallery">
+          <div class="content-box" id="gallery">
             <h3>Picture Gallery</h3>
             <div class="gallery">
               <img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/481865437_617940431220588_1566384181150925618_n.jpg" alt="Image 1">
@@ -76,23 +77,60 @@
               <img src="https://scontent.fmnl30-3.fna.fbcdn.net/v/t1.15752-9/481401204_28578321155145885_5681485140275656498_n.png" alt="Image 4">
             </div>
           </div>
+          <div class="content-box" id="comment">
+            <h3>Leave a Comment</h3>
+            <form @submit.prevent="submitComment">
+              <label for="name">Name:</label>
+              <input type="text" id="name" v-model="comment.name" required>
+              
+              <label for="message">Message:</label>
+              <textarea id="message" v-model="comment.message" required></textarea>
+  
+              <button type="submit">Submit</button>
+            </form>
+  
+            <div class="comments">
+              <h4>Comments:</h4>
+              <ul>
+                <li v-for="(comment, index) in comments" :key="index">
+                  <strong>{{ comment.name }}:</strong> {{ comment.message }}
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </template>
   
   <script>
+  import supabase from "../supabaseClient";
   export default {
     data() {
       return {
         showWelcomePage: true,
+        comment: {
+          name: '',
+          message: ''
+        },
+        comments: []
       };
     },
     methods: {
       enterSite() {
         this.showWelcomePage = false;
       },
-    },
+      submitComment() {
+        if (this.comment.name && this.comment.message) {
+          this.comments.push({ 
+            name: this.comment.name, 
+            message: this.comment.message 
+          });
+          this.comment.name = '';
+          this.comment.message = '';
+        }
+      }
+    }
   };
   </script>
   
@@ -106,46 +144,22 @@
   body {
     font-family: "Poppins", sans-serif;
     background-color: #f4f4f4;
-    background-image: url("https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
-    background-size: cover;
-    background-attachment: fixed;
     color: #333;
   }
 
-  .welcome-page {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
+  .content-box {
+    background: white;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
   
-  .welcome-page button {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .welcome-page button:hover {
-    background: #2980b9;
-  }
 
   .navbar {
-    background: rgba(52, 152, 219, 0.9);
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
+    background: #3498db;
+    padding: 10px;
+    text-align: center;
   }
   
   .navbar ul {
@@ -159,23 +173,8 @@
   }
   
   .navbar ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-    font-size: 1.1rem;
-  }
-  
-  .navbar ul li a:hover {
-    color: #f1c40f;
-  }
-
-  .grid-container {
-    display: grid;
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 20px auto;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
   }
 
   table {
@@ -194,16 +193,11 @@
     color: white;
   }
   
-  td {
-    background: rgba(255, 255, 255, 0.8);
-  }
-  
   .gallery {
     display: flex;
     gap: 10px;
     overflow-x: auto;
     padding: 10px;
-    white-space: nowrap;
   }
   
   .gallery img {
@@ -211,23 +205,91 @@
     height: 150px;
     object-fit: cover;
     border-radius: 5px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
   }
   
   .gallery img:hover {
     transform: scale(1.1);
   }
   
-  @media (min-width: 768px) {
-    .grid-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .comment-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  @media (min-width: 1024px) {
-    .grid-container {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  .comment-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  h3 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #3498db;
+    outline: none;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+  }
+  
+  button:hover:not(:disabled) {
+    background: #2980b9;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .success {
+    color: green;
+    text-align: center;
+    margin-top: 10px;
   }
   </style>
+
   
