@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import PersonalProfile from "./components/PersonalProfile.vue";
+import PersonalProfile from "./components/PersonalProfile.vue",
+import CommentForm from "./components/CommentForm.vue";
 
 export default {
   components: {
