@@ -38,7 +38,7 @@
             <p>Graduated senior high from Marikina Science High School.</p>
   
             <h3>IT Experience</h3>
-            <ul>
+            <ul class="no-bullets">
               <li>Contributed to a working website & app (Rams Pawtners) for a school project.</li>
               <li>Completed a course in Code Combat.</li>
             </ul>
@@ -91,7 +91,7 @@
   
             <div class="comments">
               <h4>Comments:</h4>
-              <ul>
+              <ul class="no-bullets">
                 <li v-for="(comment, index) in comments" :key="index">
                   <strong>{{ comment.name }}:</strong> {{ comment.message }}
                 </li>
@@ -146,7 +146,39 @@
     background-color: #f4f4f4;
     color: #333;
   }
-
+  
+  .welcome-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://www.transparenttextures.com/patterns/cartoon-clouds.png');
+    background-color: #87CEEB; /* Light blue sky color */
+    color: white;
+    text-align: center;
+  }
+  
+  .welcome-page h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-page button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .welcome-page button:hover {
+    background-color: #2980b9;
+  }
+  
   .content-box {
     background: white;
     padding: 20px;
@@ -155,7 +187,6 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
   
-
   .navbar {
     background: #3498db;
     padding: 10px;
@@ -166,6 +197,7 @@
     list-style: none;
     display: flex;
     justify-content: center;
+    padding: 0;
   }
   
   .navbar ul li {
@@ -176,7 +208,7 @@
     color: white;
     text-decoration: none;
   }
-
+  
   table {
     width: 100%;
     border-collapse: collapse;
@@ -290,6 +322,14 @@
     text-align: center;
     margin-top: 10px;
   }
-  </style>
-
   
+  .no-bullets {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  </style>
