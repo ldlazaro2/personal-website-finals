@@ -153,8 +153,9 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('https://www.transparenttextures.com/patterns/cartoon-clouds.png');
-    background-color: #87CEEB; /* Light blue sky color */
+    background-image: url('https://static.vecteezy.com/system/resources/previews/022/812/247/non_2x/clouds-and-stars-the-sun-on-a-blue-background-children-s-illustration-of-the-sky-in-a-paper-decorative-style-3d-vector.jpg');
+    background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
   }
@@ -162,21 +163,31 @@
   .welcome-page h1 {
     font-size: 3rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   
   .welcome-page button {
-    padding: 10px 20px;
+    padding: 15px 30px;
     font-size: 1.2rem;
     background-color: #3498db;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
   }
   
   .welcome-page button:hover {
     background-color: #2980b9;
+  }
+  
+  .main-content {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/022/812/247/non_2x/clouds-and-stars-the-sun-on-a-blue-background-children-s-illustration-of-the-sky-in-a-paper-decorative-style-3d-vector.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 20px;
   }
   
   .content-box {
