@@ -30,9 +30,27 @@
 
         <section class="content-box">
           <h2>About Me</h2>
-          <p>Hi, my name is Luis Lorenzo D. Lazaro.</p>
-          <p>I am currently enrolled at Asia Pacific College in BSCS-SF231. I live in Marikina City.</p>
-          <p>Fun Fact: I have 3 dogs that are all girls.</p>
+          <div class="about-me-container">
+            <div class="about-me-text">
+              <p>Hi, my name is Luis Lorenzo D. Lazaro.</p>
+              <p>I am currently enrolled at Asia Pacific College in BSCS-SF231. I live in Marikina City.</p>
+              <p>Fun Fact: I have 3 dogs that are all girls.</p>
+              
+              <h3>Education / Achievements</h3>
+              <p>Graduated preschool from ISYC.</p>
+              <p>Graduated elementary from Marist School.</p>
+              <p>Graduated senior high from Marikina Science High School.</p>
+
+              <h3>IT Experience</h3>
+              <ul class="no-bullets">
+                <li>Contributed to a working website & app (Rams Pawtners) for a school project.</li>
+                <li>Completed a course in Code Combat.</li>
+              </ul>
+            </div>
+            <div class="about-me-image">
+              <img src="https://via.placeholder.com/200x400" alt="About Me Image">
+            </div>
+          </div>
         </section>
 
         <section id="hobbies" class="content-box">
@@ -52,6 +70,10 @@
               <tr>
                 <td>🎮 Playing Video Games</td>
                 <td>👨‍👩‍👧👦 Give back to my parents</td>
+              </tr>
+              <tr>
+                <td>🎵 Listening to Music</td>
+                <td>💼 Become a successful professional</td>
               </tr>
             </tbody>
           </table>
