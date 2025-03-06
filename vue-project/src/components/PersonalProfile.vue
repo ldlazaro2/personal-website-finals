@@ -20,7 +20,7 @@
         <div class="content-box" id="about">
           <h1>Personal Profile Web Page</h1>
         </div>
-        <div class="content-box small-box" id="connect">
+        <div class="content-box" id="connect">
           <h2>Connect With Me</h2>
           <p>You can find me on 
             <a href="https://www.linkedin.com/in/luis-lazaro-b626a8286/" target="_blank">LinkedIn</a>.
@@ -43,7 +43,7 @@
             <li>Completed a course in Code Combat.</li>
           </ul>
         </div>
-        <div class="content-box small-box" id="hobbies">
+        <div class="content-box" id="hobbies">
           <h3>Hobbies and Goals</h3>
           <table>
             <thead>
@@ -71,134 +71,171 @@
         <div class="content-box" id="gallery">
           <h3>Picture Gallery</h3>
           <div class="gallery">
+            <img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/481865437_617940431220588_1566384181150925618_n.jpg" alt="Image 1">
+            <img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/482194901_1164921068512703_5433057008602376022_n.jpg" alt="Image 2">
+            <img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/482291816_2817193478463738_172566148447157408_n.jpg" alt="Image 3">
+            <img src="https://scontent.fmnl30-3.fna.fbcdn.net/v/t1.15752-9/481401204_28578321155145885_5681485140275656498_n.png" alt="Image 4">
+          </div>
+        </div>
+        <div class="content-box" id="comment">
+          <h3>Leave a Comment</h3>
+          <form @submit.prevent="submitComment">
+            <label for="name">Name:</label>
+            <input type="text" id="name" v-model="comment.name" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" v-model="comment.message" required></textarea>
 
+            <button type="submit">Submit</button>
+          </form>
+
+          <div class="comments">
+            <h4>Comments:</h4>
+            <ul class="no-bullets">
+              <li v-for="(comment, index) in comments" :key="index">
+                <strong>{{ comment.name }}:</strong> {{ comment.message }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      showWelcomePage: true,
+      comment: {
+        name: '',
+        message: ''
+      },
+      comments: []
+    };
+  },
+  methods: {
+    enterSite() {
+      this.showWelcomePage = false;
+    },
+    submitComment() {
+      if (this.comment.name && this.comment.message) {
+        this.comments.push({ 
+          name: this.comment.name, 
+          message: this.comment.message 
+        });
+        this.comment.name = '';
+        this.comment.message = '';
+      }
+    }
+  }
+};
+</script>
+
 <style scoped>
-<style scoped>
-/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
+html, body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
   background-color: #f4f4f4;
   color: #333;
 }
 
-/* Full Page Container */
 .container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f4f4f4; /* Removed broken image */
 }
 
-/* Welcome Page */
 .welcome-page {
-  width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
+  height: 100vh;
   text-align: center;
+  background: white;
 }
 
-/* Fixing the Enter Button */
-.welcome-page button {
-  padding: 12px 24px;
-  font-size: 1rem;
-  background: #e74c3c;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-  width: 200px;
-}
-
-.welcome-page button:hover {
-  background: #c0392b;
-  transform: scale(1.05);
-}
-
-/* Main Content */
 .main-content {
-  width: 100%;
+  flex: 1;
   padding: 20px;
   background: white;
 }
 
-/* Navigation Bar */
+.content-box {
+  background: white;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 .navbar {
-  background: #e74c3c;
+  background: #3498db;
   padding: 10px;
   text-align: center;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 15px;
+}
+
+.navbar ul li {
+  margin: 0 15px;
 }
 
 .navbar ul li a {
   color: white;
   text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s;
 }
 
-.navbar ul li a:hover {
-  color: #f1c40f;
+.gallery {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px;
 }
 
-/* Grid Layout */
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
+.gallery img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s;
 }
 
-.content-box {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+.gallery img:hover {
+  transform: scale(1.1);
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.no-bullets {
+  list-style: none;
+  padding-left: 0;
 }
 
-@media (min-width: 1024px) {
-  .grid-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #2980b9;
 }
 </style>
-
 
