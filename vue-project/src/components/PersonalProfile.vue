@@ -28,20 +28,27 @@
         </div>
         <div class="content-box">
           <h2>About Me</h2>
-          <p>I am Luis Lorenzo D. Lazaro.</p>
-          <p>I am currently enrolled at Asia Pacific College in BSCS-SF231. I live in Marikina City.</p>
-          <p>Fun Fact: I have 3 dogs that are all girls.</p>
-          
-          <h3>Education / Achievements</h3>
-          <p>Graduated preschool from ISYC.</p>
-          <p>Graduated elementary from Marist School.</p>
-          <p>Graduated senior high from Marikina Science High School.</p>
+          <div class="about-me-container">
+            <div class="about-me-text">
+              <p>Hi, my name is Luis Lorenzo D. Lazaro.</p>
+              <p>I am currently enrolled at Asia Pacific College in BSCS-SF231. I live in Marikina City.</p>
+              <p>Fun Fact: I have 3 dogs that are all girls.</p>
+              
+              <h3>Education / Achievements</h3>
+              <p>Graduated preschool from ISYC.</p>
+              <p>Graduated elementary from Marist School.</p>
+              <p>Graduated senior high from Marikina Science High School.</p>
 
-          <h3>IT Experience</h3>
-          <ul class="no-bullets">
-            <li>Contributed to a working website & app (Rams Pawtners) for a school project.</li>
-            <li>Completed a course in Code Combat.</li>
-          </ul>
+              <h3>IT Experience</h3>
+              <ul class="no-bullets">
+                <li>Contributed to a working website & app (Rams Pawtners) for a school project.</li>
+                <li>Completed a course in Code Combat.</li>
+              </ul>
+            </div>
+            <div class="about-me-image">
+              <img src="https://via.placeholder.com/200x400" alt="About Me Image">
+            </div>
+          </div>
         </div>
         <div class="content-box" id="hobbies">
           <h3>Hobbies and Goals</h3>
@@ -71,10 +78,10 @@
         <div class="content-box" id="gallery">
           <h3>Picture Gallery</h3>
           <div class="gallery">
-            <img src="https://scontent-hkg4-2.xx.fbcdn.net/v/t1.15752-9/481865437_617940431220588_1566384181150925618_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeFsZmvX0tVAoIqx0tB67x9NJvCyHObet5Im8LIc5t63ksiesxQpTJPqfQ-c1odGFHFzifMDSTyhSxUBVMF31jxZ&_nc_ohc=AB2-FFZrEtkQ7kNvgFuD1Wt&_nc_oc=AdjbYKwz48yNfwvfWDLThOUPAEMGNUpDfLCuVxuMldJcDFaK62aPRQiHMYZu2c_QrLs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-hkg4-2.xx&oh=03_Q7cD1wEPQ3x11T-5jbWGyp9kVR1MA3szlw2-n3hufdrKifFxjA&oe=67F06EE3" alt="Image 1">
-            <img src="https://scontent-hkg1-1.xx.fbcdn.net/v/t1.15752-9/360048605_962855171658580_3508757474358519529_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGlPp8lxf37rfYBnRcJ5hOw3J8tNEpLnpTcny00SkuelOatLTrr-WsgSaVfFAU-XlRKDxCnEWdQoOWf5TlQV5vH&_nc_ohc=XxOuIOLxq2cQ7kNvgGpCIjU&_nc_oc=Adj6FVls-6Ql7GK9884ZsAd7mKJ10O-LR14MGIhU2g9L0jSa3jiqLpBlK5F9JO4umhI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-hkg1-1.xx&oh=03_Q7cD1wEY7k-8aSisPaAMXsbY6G9kdg-r-9C6MyEIHltbMTT8nw&oe=67F051B4" alt="Image 2">
-            <img src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.15752-9/482291816_2817193478463738_172566148447157408_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeF1TwNScCDxhAE_2qLduhaN4s-Izre11uDiz4jOt7XW4Ome5cz3arukPtnQqk0itcQlYlPrENl1i6MJizXtt_47&_nc_ohc=cXBPIZZJCzsQ7kNvgE35Mch&_nc_oc=AdgBhj8BCkbdQRz1fjvz-sqrmXS0XGdpOFRhMFsGIPspUKRgopljlLh15jZ-OwZjt3s&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&oh=03_Q7cD1wEJ6qMrm4NR7xKPk6aMZqsqV8P_pUYejdGLESmS3mJwHA&oe=67F07B76" alt="Image 3">
-            <img src="https://scontent-hkg1-1.xx.fbcdn.net/v/t1.15752-9/481401204_28578321155145885_5681485140275656498_n.png?stp=dst-png_s640x640&_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeFEIh7ilYSHmJ6A-Vs8e-bcWY3R4qe2JFJZjdHip7YkUqmIXLzwFcYa08nI7DSsPa7AO-px62fRapZ9dMTOFvTL&_nc_ohc=_dBfwO1m2rMQ7kNvgGtjnm4&_nc_oc=AdjsoxikEpYqc1SbOUxdRHjYJgME6pR_0A5KQ7AFf0TZuo8689GEbfsgXAgZoq5MaJg&_nc_zt=23&_nc_ht=scontent-hkg1-1.xx&oh=03_Q7cD1wGf6CFRSlu2blLJ7ehXDQ96G7aQvCUNbjo6aOqHOcl6Fw&oe=67F0484C" alt="Image 4">
+            <img src="https://via.placeholder.com/300x200" alt="Image 1">
+            <img src="https://via.placeholder.com/300x200" alt="Image 2">
+            <img src="https://via.placeholder.com/300x200" alt="Image 3">
+            <img src="https://via.placeholder.com/300x200" alt="Image 4">
           </div>
         </div>
         <div class="content-box" id="comment">
@@ -99,40 +106,25 @@
           </div>
         </div>
       </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="social-media">
+          <a href="https://www.facebook.com" target="_blank">
+            <img src="https://via.placeholder.com/40x40" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com" target="_blank">
+            <img src="https://via.placeholder.com/40x40" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/in/luis-lazaro-b626a8286/" target="_blank">
+            <img src="https://via.placeholder.com/40x40" alt="LinkedIn">
+          </a>
+        </div>
+        <p>&copy; 2025 Luis Lorenzo D. Lazaro. All rights reserved.</p>
+      </footer>
     </div>
   </div>
 </template>
-
-<script>
-import supabase from "../supabaseClient";
-export default {
-  data() {
-    return {
-      showWelcomePage: true,
-      comment: {
-        name: '',
-        message: ''
-      },
-      comments: []
-    };
-  },
-  methods: {
-    enterSite() {
-      this.showWelcomePage = false;
-    },
-    submitComment() {
-      if (this.comment.name && this.comment.message) {
-        this.comments.push({ 
-          name: this.comment.name, 
-          message: this.comment.message 
-        });
-        this.comment.name = '';
-        this.comment.message = '';
-      }
-    }
-  }
-};
-</script>
 
 <style scoped>
 * {
@@ -161,14 +153,14 @@ body {
 }
 
 .welcome-page h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 4rem; /* Larger font size */
+  margin-bottom: 30px; /* Increased margin */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .welcome-page button {
-  padding: 12px 20px;
-  font-size: 1rem;
+  padding: 15px 30px; /* Larger button */
+  font-size: 1.2rem; /* Larger font size */
   background-color: #3498db;
   color: white;
   border: none;
@@ -179,7 +171,6 @@ body {
   width: fit-content;
   text-align: center;
 }
-
 
 .welcome-page button:hover {
   background-color: #2980b9;
@@ -194,15 +185,15 @@ body {
 
 .content-box {
   background: white;
-  padding: 20px;
-  margin: 10px 0;
+  padding: 30px; /* Increased padding */
+  margin: 20px 0; /* Increased margin */
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
   background: #3498db;
-  padding: 10px;
+  padding: 15px; /* Increased padding */
   text-align: center;
 }
 
@@ -214,12 +205,35 @@ body {
 }
 
 .navbar ul li {
-  margin: 0 15px;
+  margin: 0 20px; /* Increased margin */
 }
 
 .navbar ul li a {
   color: white;
   text-decoration: none;
+  font-size: 1.2rem; /* Larger font size */
+}
+
+.about-me-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.about-me-text {
+  flex: 2;
+}
+
+.about-me-image {
+  flex: 1;
+}
+
+.about-me-image img {
+  width: 200px; /* Vertical rectangle frame */
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 5px solid #3498db;
 }
 
 table {
@@ -229,8 +243,9 @@ table {
 }
 
 th, td {
-  padding: 10px;
+  padding: 15px; /* Increased padding */
   border: 1px solid #ddd;
+  font-size: 1.1rem; /* Larger font size */
 }
 
 th {
@@ -240,22 +255,16 @@ th {
 
 .gallery {
   display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  padding: 10px;
-}
-
-.gallery {
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 20px; /* Increased gap */
   padding: 20px;
 }
+
 .gallery img {
-  width: 200px;
-  height: 150px;
+  width: 300px; /* Larger images */
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
   border: 3px solid #3498db;
@@ -267,85 +276,74 @@ th {
   border-color: #2980b9; 
 }
 
-
 .comment-form {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .comment-form:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  h3 {
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    font-weight: 600;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input,
-  textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
-  }
-  
-  input:focus,
-  textarea:focus {
-    border-color: #3498db;
-    outline: none;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    font-size: 1.2rem;
-    background: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  button:disabled {
-    background: #95a5a6;
-    cursor: not-allowed;
-  }
-  
-  button:hover:not(:disabled) {
-    background: #2980b9;
-  }
-  
-  .error {
-    color: red;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .success {
-    color: green;
-    text-align: center;
-    margin-top: 10px;
-  }
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 20px; /* Increased margin */
+  font-size: 1.5rem; /* Larger font size */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Increased margin */
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px; /* Increased margin */
+  font-size: 1.1rem; /* Larger font size */
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 15px; /* Increased padding */
+  font-size: 1.1rem; /* Larger font size */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 15px; /* Increased padding */
+  font-size: 1.2rem; /* Larger font size */
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background: #2980b9;
+}
 
 .no-bullets {
   list-style-type: none;
@@ -354,6 +352,38 @@ th {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Increased margin */
+  font-size: 2rem; /* Larger font size */
+}
+
+/* Footer Styles */
+.footer {
+  background: #3498db;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px; /* Increased margin */
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Increased gap */
+  margin-bottom: 15px;
+}
+
+.social-media img {
+  width: 40px; /* Larger icons */
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+  transform: scale(1.2);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1.1rem; /* Larger font size */
 }
 </style>
