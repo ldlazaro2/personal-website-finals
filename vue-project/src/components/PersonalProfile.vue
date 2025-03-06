@@ -245,17 +245,28 @@ th {
   padding: 10px;
 }
 
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+
 .gallery img {
   width: 200px;
   height: 150px;
   object-fit: cover;
-  border-radius: 5px;
-  transition: transform 0.3s;
+  border-radius: 8px;
+  border: 3px solid #3498db;
+  transition: transform 0.3s, border-color 0.3s;
 }
 
 .gallery img:hover {
   transform: scale(1.1);
+  border-color: #2980b9; 
 }
+
 
 .comment-form {
     max-width: 600px;
