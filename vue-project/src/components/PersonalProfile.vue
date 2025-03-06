@@ -194,6 +194,8 @@ body {
 .main-content {
   padding: 20px;
   background-color: #fff;
+  display: flex;
+  gap: 20px;
 }
 
 .navbar {
@@ -229,6 +231,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
 }
 
 .content-box:hover {
@@ -236,21 +239,10 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
 .about-me-container {
   display: flex;
   gap: 20px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .about-me-text {
@@ -259,7 +251,7 @@ body {
 
 .about-me-image img {
   width: 200px;
-  height: 400px;
+  height: 600px; /* Adjusted height to align with all three boxes */
   object-fit: cover;
   border-radius: 8px;
   border: 4px solid #000; 
