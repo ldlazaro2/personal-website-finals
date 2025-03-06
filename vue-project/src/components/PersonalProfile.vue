@@ -252,7 +252,7 @@ th {
   align-items: center;
   gap: 15px;
   padding: 20px;
-
+}
 .gallery img {
   width: 200px;
   height: 150px;
