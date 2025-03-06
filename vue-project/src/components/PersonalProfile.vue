@@ -130,7 +130,10 @@ export default {
 };
 </script>
 
+
+
 <style scoped>
+/* General Styling */
 * {
   margin: 0;
   padding: 0;
@@ -142,24 +145,48 @@ html, body {
   font-family: "Poppins", sans-serif;
   background-color: #e9ecef;
   color: #333;
+  overflow: hidden; /* Ensures no scrollbars for fullscreen */
 }
 
 .container {
-  min-height: 100vh;
+  height: 100vh; /* Ensures full-screen height */
   display: flex;
   flex-direction: column;
 }
 
+/* Welcome Page */
 .welcome-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   text-align: center;
-  background: #dff9fb;
+  background: url('https://i.ytimg.com/vi/RIW_-Ph6DmU/maxresdefault.jpg') no-repeat center center/cover; /* Add your image URL here */
+  color: white; /* Ensures visibility of text */
 }
 
+.welcome-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.welcome-page button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: rgba(52, 152, 219, 0.8);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.welcome-page button:hover {
+  background: rgba(41, 128, 185, 0.9);
+}
+
+/* Main Content */
 .main-content {
   flex: 1;
   padding: 20px;
@@ -174,6 +201,7 @@ html, body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Navigation Bar */
 .navbar {
   background: #3498db;
   padding: 10px;
@@ -195,45 +223,10 @@ html, body {
   text-decoration: none;
 }
 
-.gallery {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  padding: 10px;
-}
-
-.gallery img {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 5px;
-  transition: transform 0.3s;
-}
-
-.gallery img:hover {
-  transform: scale(1.1);
-}
-
-.no-bullets {
-  list-style: none;
-  padding-left: 0;
-}
-
 button {
-  width: auto;
-  padding: 10px 15px;
-  font-size: 1rem;
   background: #3498db;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background: #2980b9;
 }
 </style>
-
-
