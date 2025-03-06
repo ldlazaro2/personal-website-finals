@@ -35,22 +35,28 @@
               <p>Hi, my name is Luis Lorenzo D. Lazaro.</p>
               <p>I am currently enrolled at Asia Pacific College in BSCS-SF231. I live in Marikina City.</p>
               <p>Fun Fact: I have 3 dogs that are all girls.</p>
-              
-              <h3>Education / Achievements</h3>
-              <p>Graduated preschool from ISYC.</p>
-              <p>Graduated elementary from Marist School.</p>
-              <p>Graduated senior high from Marikina Science High School.</p>
-
-              <h3>IT Experience</h3>
-              <ul class="no-bullets">
-                <li>Contributed to a working website & app (Rams Pawtners) for a school project.</li>
-                <li>Completed a course in Code Combat.</li>
-              </ul>
             </div>
             <div class="about-me-image">
               <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t1.15752-9/360048605_962855171658580_3508757474358519529_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGlPp8lxf37rfYBnRcJ5hOw3J8tNEpLnpTcny00SkuelOatLTrr-WsgSaVfFAU-XlRKDxCnEWdQoOWf5TlQV5vH&_nc_ohc=XxOuIOLxq2cQ7kNvgH-ieyF&_nc_oc=AdjZmnis40UAXjhQJZW2r0A_jl4HDkIOmjQ71_Qw3AISPlObiU09-d0OD_xTWit_gKM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&oh=03_Q7cD1wFqCnQx1B_qHNRyXt8dGLOAOVSJCCEjCLZ06KpQ0C1T7A&oe=67F089F4" alt="About Me Image" class="styled-image">
             </div>
           </div>
+        </section>
+
+        <section class="content-box fade-in">
+          <h2>Education / Achievements</h2>
+          <ul class="no-bullets">
+            <li>Graduated preschool from ISYC.</li>
+            <li>Graduated elementary from Marist School.</li>
+            <li>Graduated senior high from Marikina Science High School.</li>
+          </ul>
+        </section>
+
+        <section class="content-box fade-in">
+          <h2>IT Experience</h2>
+          <ul class="no-bullets">
+            <li>Contributed to a working website & app (Rams Pawtners) for a school project.</li>
+            <li>Completed a course in Code Combat.</li>
+          </ul>
         </section>
 
         <section id="hobbies" class="content-box fade-in">
@@ -69,7 +75,7 @@
               </tr>
               <tr>
                 <td>🎮 Playing Video Games</td>
-                <td>👨‍👩‍👧👦 Give back to my parents</td>
+                <td>👨‍👩‍👧‍👦 Give back to my parents</td>
               </tr>
               <tr>
                 <td>🎵 Listening to Music</td>
@@ -203,13 +209,14 @@ body {
   padding: 15px;
   text-align: center;
   margin-bottom: 20px;
+  width: 200px; /* Adjust width as needed */
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column; /* Changed to column for vertical layout */
+  gap: 10px;
 }
 
 .navbar ul li a {
