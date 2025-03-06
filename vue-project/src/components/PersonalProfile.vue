@@ -55,15 +55,15 @@
             <tbody>
               <tr>
                 <td>🏀 Playing Basketball</td>
-                <td>🎓 Finish College</td>
+                <td>🏆 Improve physical fitness and teamwork skills</td>
               </tr>
               <tr>
                 <td>🎮 Playing Video Games</td>
-                <td>👨‍👩‍👧‍👦 Give back to my parents</td>
+                <td>🖥️ Enhance problem-solving and strategic thinking</td>
               </tr>
               <tr>
                 <td>🎵 Listening to Music</td>
-                <td>💼 Become a successful professional</td>
+                <td>🎸 Learn to play a musical instrument</td>
               </tr>
             </tbody>
           </table>
@@ -71,10 +71,7 @@
         <div class="content-box" id="gallery">
           <h3>Picture Gallery</h3>
           <div class="gallery">
-            <img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/481865437_617940431220588_1566384181150925618_n.jpg" alt="Image 1">
-            <img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/482194901_1164921068512703_5433057008602376022_n.jpg" alt="Image 2">
-            <img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/482291816_2817193478463738_172566148447157408_n.jpg" alt="Image 3">
-            <img src="https://scontent.fmnl30-3.fna.fbcdn.net/v/t1.15752-9/481401204_28578321155145885_5681485140275656498_n.png" alt="Image 4">
+            <!-- Add images here -->
           </div>
         </div>
         <div class="content-box" id="comment">
@@ -143,7 +140,7 @@ export default {
 html, body {
   height: 100%;
   font-family: "Poppins", sans-serif;
-  background-color: #f4f4f4;
+  background-color: #e9ecef;
   color: #333;
 }
 
@@ -160,13 +157,13 @@ html, body {
   align-items: center;
   height: 100vh;
   text-align: center;
-  background: white;
+  background: #dff9fb;
 }
 
 .main-content {
   flex: 1;
   padding: 20px;
-  background: white;
+  background: #f4f4f4;
 }
 
 .content-box {
@@ -223,9 +220,9 @@ html, body {
 }
 
 button {
-  width: 100%;
-  padding: 10px;
-  font-size: 1.2rem;
+  width: auto;
+  padding: 10px 15px;
+  font-size: 1rem;
   background: #3498db;
   color: #fff;
   border: none;
@@ -238,4 +235,5 @@ button:hover {
   background: #2980b9;
 }
 </style>
+
 
