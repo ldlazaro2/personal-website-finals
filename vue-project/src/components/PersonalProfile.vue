@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div v-if="showWelcomePage" class="welcome-page">
       <h1>Welcome to My Personal Profile</h1>
       <button @click="enterSite">Enter Site</button>
@@ -140,10 +140,17 @@ export default {
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
   font-family: "Poppins", sans-serif;
   background-color: #f4f4f4;
   color: #333;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .welcome-page {
@@ -152,15 +159,14 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: black;
   text-align: center;
-  background: none; /* Removed background image */
+  background: white;
 }
 
 .main-content {
-  min-height: 100vh;
+  flex: 1;
   padding: 20px;
-  background: white; /* Removed the background image */
+  background: white;
 }
 
 .content-box {
@@ -209,6 +215,11 @@ body {
 
 .gallery img:hover {
   transform: scale(1.1);
+}
+
+.no-bullets {
+  list-style: none;
+  padding-left: 0;
 }
 
 button {
