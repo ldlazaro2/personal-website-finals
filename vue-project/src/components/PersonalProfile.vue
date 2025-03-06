@@ -84,38 +84,58 @@
             <img src="https://via.placeholder.com/300x200" alt="Image 4">
           </div>
         </div>
-        <template>
-    <div class="comment-form">
-      <h3>Leave a Comment</h3>
-      <form @submit.prevent="submitComment">
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            v-model="name"
-            placeholder="Your name"
-            required
-          />
+        <div class="content-box" id="comment">
+          <div class="comment-form">
+            <h3>Leave a Comment</h3>
+            <form @submit.prevent="submitComment">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  v-model="name"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea
+                  id="message"
+                  v-model="message"
+                  placeholder="Your message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" :disabled="isSubmitting">
+                {{ isSubmitting ? "Submitting..." : "Submit" }}
+              </button>
+            </form>
+            <p v-if="error" class="error">{{ error }}</p>
+            <p v-if="success" class="success">{{ success }}</p>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="message">Message:</label>
-          <textarea
-            id="message"
-            v-model="message"
-            placeholder="Your message"
-            required
-          ></textarea>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="social-media">
+          <a href="https://www.facebook.com" target="_blank">
+            <img src="https://via.placeholder.com/40x40" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com" target="_blank">
+            <img src="https://via.placeholder.com/40x40" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/in/luis-lazaro-b626a8286/" target="_blank">
+            <img src="https://via.placeholder.com/40x40" alt="LinkedIn">
+          </a>
         </div>
-        <button type="submit" :disabled="isSubmitting">
-          {{ isSubmitting ? "Submitting..." : "Submit" }}
-        </button>
-      </form>
-      <p v-if="error" class="error">{{ error }}</p>
-      <p v-if="success" class="success">{{ success }}</p>
+        <p>&copy; 2025 Luis Lorenzo D. Lazaro. All rights reserved.</p>
+      </footer>
     </div>
-  </template>
-  
+  </div>
+</template>
+
   <script>
 import supabase from "@/supabaseClient";
 
@@ -159,7 +179,6 @@ import supabase from "@/supabaseClient";
   };
   </script>
 
-      <!-- Footer -->
       <footer class="footer">
         <div class="social-media">
           <a href="https://www.facebook.com" target="_blank">
@@ -205,14 +224,14 @@ body {
 }
 
 .welcome-page h1 {
-  font-size: 4rem; /* Larger font size */
-  margin-bottom: 30px; /* Increased margin */
+  font-size: 4rem; 
+  margin-bottom: 30px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .welcome-page button {
-  padding: 15px 30px; /* Larger button */
-  font-size: 1.2rem; /* Larger font size */
+  padding: 15px 30px; 
+  font-size: 1.2rem;
   background-color: #3498db;
   color: white;
   border: none;
@@ -237,15 +256,15 @@ body {
 
 .content-box {
   background: white;
-  padding: 30px; /* Increased padding */
-  margin: 20px 0; /* Increased margin */
+  padding: 30px; 
+  margin: 20px 0; 
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
   background: #3498db;
-  padding: 15px; /* Increased padding */
+  padding: 15px;
   text-align: center;
 }
 
@@ -257,13 +276,13 @@ body {
 }
 
 .navbar ul li {
-  margin: 0 20px; /* Increased margin */
+  margin: 0 20px;
 }
 
 .navbar ul li a {
   color: white;
   text-decoration: none;
-  font-size: 1.2rem; /* Larger font size */
+  font-size: 1.2rem;
 }
 
 .about-me-container {
@@ -281,7 +300,7 @@ body {
 }
 
 .about-me-image img {
-  width: 200px; /* Vertical rectangle frame */
+  width: 200px;
   height: 400px;
   object-fit: cover;
   border-radius: 10px;
@@ -295,9 +314,9 @@ table {
 }
 
 th, td {
-  padding: 15px; /* Increased padding */
+  padding: 15px;
   border: 1px solid #ddd;
-  font-size: 1.1rem; /* Larger font size */
+  font-size: 1.1rem;
 }
 
 th {
@@ -310,12 +329,12 @@ th {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Increased gap */
+  gap: 20px;
   padding: 20px;
 }
 
 .gallery img {
-  width: 300px; /* Larger images */
+  width: 300px;
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
@@ -345,26 +364,26 @@ th {
 
 h3 {
   text-align: center;
-  margin-bottom: 20px; /* Increased margin */
-  font-size: 1.5rem; /* Larger font size */
+  margin-bottom: 20px;
+  font-size: 1.5rem; 
 }
 
 .form-group {
-  margin-bottom: 20px; /* Increased margin */
+  margin-bottom: 20px; 
 }
 
 label {
   font-weight: 600;
   display: block;
-  margin-bottom: 10px; /* Increased margin */
-  font-size: 1.1rem; /* Larger font size */
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
 
 input,
 textarea {
   width: 100%;
-  padding: 15px; /* Increased padding */
-  font-size: 1.1rem; /* Larger font size */
+  padding: 15px;
+  font-size: 1.1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   transition: border-color 0.3s ease;
@@ -378,8 +397,8 @@ textarea:focus {
 
 button {
   width: 100%;
-  padding: 15px; /* Increased padding */
-  font-size: 1.2rem; /* Larger font size */
+  padding: 15px;
+  font-size: 1.2rem;
   background: #3498db;
   color: #fff;
   border: none;
@@ -404,28 +423,27 @@ button:hover:not(:disabled) {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 20px; /* Increased margin */
-  font-size: 2rem; /* Larger font size */
+  margin-bottom: 20px;
+  font-size: 2rem; 
 }
 
-/* Footer Styles */
 .footer {
   background: #3498db;
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 40px; /* Increased margin */
+  margin-top: 40px; 
 }
 
 .social-media {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Increased gap */
+  gap: 20px; 
   margin-bottom: 15px;
 }
 
 .social-media img {
-  width: 40px; /* Larger icons */
+  width: 40px;
   height: 40px;
   transition: transform 0.3s ease;
 }
@@ -436,6 +454,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer p {
   margin: 0;
-  font-size: 1.1rem; /* Larger font size */
+  font-size: 1.1rem; 
 }
 </style>
