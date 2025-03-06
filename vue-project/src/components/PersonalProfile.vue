@@ -7,7 +7,7 @@
 
     <div v-show="!showWelcomePage" class="main-content">
       <nav class="navbar">
-        <ul>
+        <ul class="no-bullets">
           <li><a href="#about">About Me</a></li>
           <li><a href="#connect">Connect With Me</a></li>
           <li><a href="#hobbies">Hobbies & Goals</a></li>
@@ -17,18 +17,18 @@
       </nav>
 
       <div class="grid-container">
-        <section id="about" class="content-box">
+        <section id="about" class="content-box fade-in">
           <h1>Personal Profile Web Page</h1>
         </section>
         
-        <section id="connect" class="content-box">
+        <section id="connect" class="content-box fade-in">
           <h2>Connect With Me</h2>
           <p>You can find me on 
             <a href="https://www.linkedin.com/in/luis-lazaro-b626a8286/" target="_blank">LinkedIn</a>.
           </p>
         </section>
 
-        <section class="content-box">
+        <section class="content-box fade-in">
           <h2>About Me</h2>
           <div class="about-me-container">
             <div class="about-me-text">
@@ -48,12 +48,12 @@
               </ul>
             </div>
             <div class="about-me-image">
-              <img src="https://via.placeholder.com/200x400" alt="About Me Image">
+              <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t1.15752-9/360048605_962855171658580_3508757474358519529_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGlPp8lxf37rfYBnRcJ5hOw3J8tNEpLnpTcny00SkuelOatLTrr-WsgSaVfFAU-XlRKDxCnEWdQoOWf5TlQV5vH&_nc_ohc=XxOuIOLxq2cQ7kNvgH-ieyF&_nc_oc=AdjZmnis40UAXjhQJZW2r0A_jl4HDkIOmjQ71_Qw3AISPlObiU09-d0OD_xTWit_gKM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&oh=03_Q7cD1wFqCnQx1B_qHNRyXt8dGLOAOVSJCCEjCLZ06KpQ0C1T7A&oe=67F089F4" alt="About Me Image" class="styled-image">
             </div>
           </div>
         </section>
 
-        <section id="hobbies" class="content-box">
+        <section id="hobbies" class="content-box fade-in">
           <h3>Hobbies and Goals</h3>
           <table>
             <thead>
@@ -79,22 +79,24 @@
           </table>
         </section>
 
-        <section id="gallery" class="content-box">
+        <section id="gallery" class="content-box fade-in">
           <h3>Picture Gallery</h3>
           <div class="gallery">
-            <img src="https://via.placeholder.com/300x200" alt="Image 1">
-            <img src="https://via.placeholder.com/300x200" alt="Image 2">
+            <img src="https://scontent.fmnl17-7.fna.fbcdn.net/v/t1.15752-9/370282104_247747214898949_683149009952512446_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeHv3eKmTHTqpgW3MtsCcsxE4urA0xp9l_bi6sDTGn2X9gklL68r1ozPF13Slm0SAQ8BoLKSi3KOww-wp7NHaGSt&_nc_ohc=YpiCw9rLxYwQ7kNvgE-tBk6&_nc_oc=AdhZbP9X5Q3lOOX6GSO_1H1VINRM2jc9ZBphyKKqwqXqroF0KZRMArYvX_QHceH5p_s&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl17-7.fna&oh=03_Q7cD1wGNDwuRFVkFxlOcqjXtQ5HgxyqDi4dyUAkCvj-cs-0zCQ&oe=67F08376" alt="Image 1" class="styled-image">
+            <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t1.15752-9/481401204_28578321155145885_5681485140275656498_n.png?stp=dst-png_s640x640&_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeFEIh7ilYSHmJ6A-Vs8e-bcWY3R4qe2JFJZjdHip7YkUqmIXLzwFcYa08nI7DSsPa7AO-px62fRapZ9dMTOFvTL&_nc_ohc=_dBfwO1m2rMQ7kNvgGbjedk&_nc_oc=AdgGuY_SN2Ss-n2qmgdhA3uFYXmssfa-JTBPTb5q_FuAYT9LtZa6fv21_76gYKsZmvY&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&oh=03_Q7cD1wFZCtV4UC3hhDoVIgR1l9KA3XY-6YoTJolkJPxzaG76xw&oe=67F0808C" alt="Image 2" class="styled-image">
+            <img src="https://scontent.fmnl17-4.fna.fbcdn.net/v/t1.15752-9/481482043_1348484519684429_420080895588121485_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHBxf2c5SkuciBNyOur9lbBN4zeE7QTLXU3jN4TtBMtdVhMUpKg8zexQq4Tpng5HUZj-3EoRi6ge0f2xhJ-Hi59&_nc_ohc=xWX8EhfOKdEQ7kNvgGiBNUV&_nc_oc=AdijkSSIGGd0AeGRqrFndlKowidwiyQ1CUz3Su8T9d27PIRoCzdERMUb1Qw4d2l_MPU&_nc_zt=23&_nc_ht=scontent.fmnl17-4.fna&oh=03_Q7cD1wG_ZWvAP_q1QHHC7Y7LbzLEQ-fFlVuSAosTzP4KpHsijA&oe=67F07F10" alt="Image 3" class="styled-image">
           </div>
         </section>
 
-        <section id="comment" class="content-box">
+        <section id="comment" class="content-box fade-in">
           <h3>Leave a Comment</h3>
           <form @submit.prevent="addComment">
-            <input v-model="newComment" type="text" placeholder="Write a comment...">
+            <input v-model="newName" type="text" placeholder="Your name..." required>
+            <input v-model="newComment" type="text" placeholder="Write a comment..." required>
             <button type="submit">Submit</button>
           </form>
-          <ul>
-            <li v-for="(comment, index) in comments" :key="index">{{ comment }}</li>
+          <ul class="no-bullets">
+            <li v-for="(comment, index) in comments" :key="index"><strong>{{ comment.name }}:</strong> {{ comment.text }}</li>
           </ul>
         </section>
       </div>
@@ -102,13 +104,13 @@
       <footer class="footer">
         <div class="social-media">
           <a href="https://www.facebook.com" target="_blank">
-            <img src="https://via.placeholder.com/40x40" alt="Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/2048px-Facebook_f_logo_%282021%29.svg.png" alt="Facebook" class="styled-image">
           </a>
           <a href="https://www.instagram.com" target="_blank">
-            <img src="https://via.placeholder.com/40x40" alt="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram" class="styled-image">
           </a>
           <a href="https://www.linkedin.com/in/luis-lazaro-b626a8286/" target="_blank">
-            <img src="https://via.placeholder.com/40x40" alt="LinkedIn">
+            <img src="https://static.vecteezy.com/system/resources/previews/023/986/926/non_2x/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png" alt="LinkedIn" class="styled-image">
           </a>
         </div>
         <p>&copy; 2025 Luis Lorenzo D. Lazaro. All rights reserved.</p>
@@ -122,6 +124,7 @@ export default {
   data() {
     return {
       showWelcomePage: true,
+      newName: "",
       newComment: "",
       comments: []
     };
@@ -131,8 +134,9 @@ export default {
       this.showWelcomePage = false;
     },
     addComment() {
-      if (this.newComment.trim() !== "") {
-        this.comments.push(this.newComment);
+      if (this.newName.trim() !== "" && this.newComment.trim() !== "") {
+        this.comments.push({ name: this.newName, text: this.newComment });
+        this.newName = "";
         this.newComment = "";
       }
     }
@@ -148,9 +152,10 @@ export default {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  font-family: "Inter", sans-serif;
+  background-color: #f5f5f5; 
+  color: #333; 
+  line-height: 1.6;
 }
 
 .welcome-page {
@@ -159,73 +164,89 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('https://static.vecteezy.com/system/resources/previews/022/812/247/non_2x/clouds-and-stars-the-sun-on-a-blue-background-children-s-illustration-of-the-sky-in-a-paper-decorative-style-3d-vector.jpg');
-  background-size: cover;
-  background-position: center;
-  color: white;
+  background-color: #000;
+  color: #fff;
   text-align: center;
 }
 
 .welcome-page h1 {
-  font-size: 4rem; 
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .welcome-page button {
-  padding: 15px 30px; 
-  font-size: 1.2rem;
-  background-color: #3498db;
-  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #fff; 
+  color: #000; 
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); 
-  width: fit-content;
-  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .welcome-page button:hover {
-  background-color: #2980b9;
+  background-color: #333; 
+  color: #fff;
 }
+
 
 .main-content {
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
   padding: 20px;
+  background-color: #fff;
 }
 
-.content-box {
-  background: white;
-  padding: 30px; 
-  margin: 20px 0; 
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
 
 .navbar {
-  background: #3498db;
+  background-color: #000; 
   padding: 15px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  padding: 0;
-}
-
-.navbar ul li {
-  margin: 0 20px;
+  gap: 20px;
 }
 
 .navbar ul li a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #ccc; 
+}
+
+.content-box {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 .about-me-container {
@@ -238,42 +259,36 @@ body {
   flex: 2;
 }
 
-.about-me-image {
-  flex: 1;
-}
-
 .about-me-image img {
   width: 200px;
   height: 400px;
   object-fit: cover;
-  border-radius: 10px;
-  border: 5px solid #3498db;
-}
+  border-radius: 8px;
+  border: 4px solid #000; 
+
 
 table {
   width: 100%;
   border-collapse: collapse;
-  text-align: center;
+  margin-top: 20px;
 }
 
 th, td {
-  padding: 15px;
+  padding: 12px;
   border: 1px solid #ddd;
-  font-size: 1.1rem;
+  text-align: left;
 }
 
 th {
-  background: #3498db;
-  color: white;
+  background-color: #000; 
+  color: #fff; 
 }
 
 .gallery {
   display: flex;
+  gap: 15px;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
 }
 
 .gallery img {
@@ -281,107 +296,75 @@ th {
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  border: 3px solid #3498db;
-  transition: transform 0.3s, border-color 0.3s;
+  border: 4px solid #000; 
+  transition: transform 0.3s ease;
 }
 
 .gallery img:hover {
-  transform: scale(1.1);
-  border-color: #2980b9; 
+  transform: scale(1.05);
 }
 
-.comment-form {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-.comment-form:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-h3 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.5rem; 
-}
-
-.form-group {
-  margin-bottom: 20px; 
-}
-
-label {
-  font-weight: 600;
-  display: block;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 15px;
-  font-size: 1.1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
   transition: border-color 0.3s ease;
 }
 
-input:focus,
-textarea:focus {
-  border-color: #3498db;
+input:focus, textarea:focus {
+  border-color: #000; 
   outline: none;
 }
 
 button {
-  width: 100%;
-  padding: 15px;
-  font-size: 1.2rem;
-  background: #3498db;
+  padding: 10px;
+  background-color: #000;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-button:disabled {
-  background: #95a5a6;
-  cursor: not-allowed;
-}
-
-button:hover:not(:disabled) {
-  background: #2980b9;
+button:hover {
+  background-color: #333; 
 }
 
 .no-bullets {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 2rem; 
+.no-bullets li {
+  background-color: #f5f5f5; 
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ddd; 
 }
 
+/* Footer */
 .footer {
-  background: #3498db;
-  color: white;
+  background-color: #000; 
+  color: #fff; 
   text-align: center;
   padding: 20px;
-  margin-top: 40px; 
+  margin-top: 40px;
 }
 
 .social-media {
   display: flex;
   justify-content: center;
-  gap: 20px; 
+  gap: 20px;
   margin-bottom: 15px;
 }
 
@@ -392,11 +375,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .social-media img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .footer p {
   margin: 0;
-  font-size: 1.1rem; 
+  font-size: 0.9rem;
+  color: #ccc; 
 }
 </style>
