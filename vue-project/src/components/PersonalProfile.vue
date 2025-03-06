@@ -142,17 +142,17 @@ import supabase from "@/supabaseClient";
 export default {
   data() {
     return {
-      showWelcomePage: true, // Added this
       name: "",
       message: "",
       isSubmitting: false,
       error: "",
       success: "",
+      showWelcomePage: true, // Added this since it's referenced
     };
   },
   methods: {
     enterSite() {
-      this.showWelcomePage = false; // Method to hide welcome page
+      this.showWelcomePage = false;
     },
     async submitComment() {
       this.isSubmitting = true;
@@ -181,6 +181,7 @@ export default {
   },
 };
 </script>
+
 
 
       <footer class="footer">
