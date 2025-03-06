@@ -17,40 +17,25 @@
       </nav>
 
       <div class="grid-container">
-        <div class="content-box" id="about">
+        <section id="about" class="content-box">
           <h1>Personal Profile Web Page</h1>
-        </div>
-        <div class="content-box" id="connect">
+        </section>
+        
+        <section id="connect" class="content-box">
           <h2>Connect With Me</h2>
           <p>You can find me on 
             <a href="https://www.linkedin.com/in/luis-lazaro-b626a8286/" target="_blank">LinkedIn</a>.
           </p>
-        </div>
-        <div class="content-box">
-          <h2>About Me</h2>
-          <div class="about-me-container">
-            <div class="about-me-text">
-              <p>Hi, my name is Luis Lorenzo D. Lazaro.</p>
-              <p>I am currently enrolled at Asia Pacific College in BSCS-SF231. I live in Marikina City.</p>
-              <p>Fun Fact: I have 3 dogs that are all girls.</p>
-              
-              <h3>Education / Achievements</h3>
-              <p>Graduated preschool from ISYC.</p>
-              <p>Graduated elementary from Marist School.</p>
-              <p>Graduated senior high from Marikina Science High School.</p>
+        </section>
 
-              <h3>IT Experience</h3>
-              <ul class="no-bullets">
-                <li>Contributed to a working website & app (Rams Pawtners) for a school project.</li>
-                <li>Completed a course in Code Combat.</li>
-              </ul>
-            </div>
-            <div class="about-me-image">
-              <img src="https://via.placeholder.com/200x400" alt="About Me Image">
-            </div>
-          </div>
-        </div>
-        <div class="content-box" id="hobbies">
+        <section class="content-box">
+          <h2>About Me</h2>
+          <p>Hi, my name is Luis Lorenzo D. Lazaro.</p>
+          <p>I am currently enrolled at Asia Pacific College in BSCS-SF231. I live in Marikina City.</p>
+          <p>Fun Fact: I have 3 dogs that are all girls.</p>
+        </section>
+
+        <section id="hobbies" class="content-box">
           <h3>Hobbies and Goals</h3>
           <table>
             <thead>
@@ -66,58 +51,32 @@
               </tr>
               <tr>
                 <td>🎮 Playing Video Games</td>
-                <td>👨‍👩‍👧‍👦 Give back to my parents</td>
-              </tr>
-              <tr>
-                <td>🎵 Listening to Music</td>
-                <td>💼 Become a successful professional</td>
+                <td>👨‍👩‍👧👦 Give back to my parents</td>
               </tr>
             </tbody>
           </table>
-        </div>
-        <div class="content-box" id="gallery">
+        </section>
+
+        <section id="gallery" class="content-box">
           <h3>Picture Gallery</h3>
           <div class="gallery">
             <img src="https://via.placeholder.com/300x200" alt="Image 1">
             <img src="https://via.placeholder.com/300x200" alt="Image 2">
-            <img src="https://via.placeholder.com/300x200" alt="Image 3">
-            <img src="https://via.placeholder.com/300x200" alt="Image 4">
           </div>
-        </div>
-        <div class="content-box" id="comment">
-          <div class="comment-form">
-            <h3>Leave a Comment</h3>
-            <form @submit.prevent="submitComment">
-              <div class="form-group">
-                <label for="name">Name:</label>
-                <input
-                  type="text"
-                  id="name"
-                  v-model="name"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea
-                  id="message"
-                  v-model="message"
-                  placeholder="Your message"
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" :disabled="isSubmitting">
-                {{ isSubmitting ? "Submitting..." : "Submit" }}
-              </button>
-            </form>
-            <p v-if="error" class="error">{{ error }}</p>
-            <p v-if="success" class="success">{{ success }}</p>
-          </div>
-        </div>
+        </section>
+
+        <section id="comment" class="content-box">
+          <h3>Leave a Comment</h3>
+          <form @submit.prevent="addComment">
+            <input v-model="newComment" type="text" placeholder="Write a comment...">
+            <button type="submit">Submit</button>
+          </form>
+          <ul>
+            <li v-for="(comment, index) in comments" :key="index">{{ comment }}</li>
+          </ul>
+        </section>
       </div>
 
-      <!-- Footer -->
       <footer class="footer">
         <div class="social-media">
           <a href="https://www.facebook.com" target="_blank">
@@ -137,70 +96,27 @@
 </template>
 
 <script>
-import supabase from "@/supabaseClient";
-
 export default {
   data() {
     return {
-      name: "",
-      message: "",
-      isSubmitting: false,
-      error: "",
-      success: "",
-      showWelcomePage: true, // Added this since it's referenced
+      showWelcomePage: true,
+      newComment: "",
+      comments: []
     };
   },
   methods: {
     enterSite() {
       this.showWelcomePage = false;
     },
-    async submitComment() {
-      this.isSubmitting = true;
-      this.error = "";
-      this.success = "";
-
-      try {
-        const { error } = await supabase
-          .from("comments")
-          .insert([{ name: this.name, message: this.message }]);
-
-        if (error) {
-          throw error;
-        }
-
-        this.name = "";
-        this.message = "";
-        this.success = "Comment submitted successfully!";
-      } catch (error) {
-        this.error = "Failed to submit comment. Please try again.";
-        console.error("Error submitting comment:", error);
-      } finally {
-        this.isSubmitting = false;
+    addComment() {
+      if (this.newComment.trim() !== "") {
+        this.comments.push(this.newComment);
+        this.newComment = "";
       }
-    },
-  },
+    }
+  }
 };
 </script>
-
-
-
-      <footer class="footer">
-        <div class="social-media">
-          <a href="https://www.facebook.com" target="_blank">
-            <img src="https://via.placeholder.com/40x40" alt="Facebook">
-          </a>
-          <a href="https://www.instagram.com" target="_blank">
-            <img src="https://via.placeholder.com/40x40" alt="Instagram">
-          </a>
-          <a href="https://www.linkedin.com/in/luis-lazaro-b626a8286/" target="_blank">
-            <img src="https://via.placeholder.com/40x40" alt="LinkedIn">
-          </a>
-        </div>
-        <p>&copy; 2025 Luis Lorenzo D. Lazaro. All rights reserved.</p>
-      </footer>
-    </div>
-  </div>
-</template>
 
 <style scoped>
 * {
