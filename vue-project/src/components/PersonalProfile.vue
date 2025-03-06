@@ -223,7 +223,7 @@ body {
 }
 
 .navbar ul li a {
-  color: #fff; /* White text for better contrast */
+  color: #000; /* White text for better contrast */
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
