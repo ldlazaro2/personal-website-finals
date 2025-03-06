@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <div v-if="showWelcomePage" class="welcome-page">
       <h1>Welcome to My Personal Profile</h1>
       <button @click="enterSite">Enter Site</button>
@@ -55,15 +55,15 @@
             <tbody>
               <tr>
                 <td>🏀 Playing Basketball</td>
-                <td>🏆 Improve physical fitness and teamwork skills</td>
+                <td>🎓 Finish College</td>
               </tr>
               <tr>
                 <td>🎮 Playing Video Games</td>
-                <td>🖥️ Enhance problem-solving and strategic thinking</td>
+                <td>👨‍👩‍👧‍👦 Give back to my parents</td>
               </tr>
               <tr>
                 <td>🎵 Listening to Music</td>
-                <td>🎸 Learn to play a musical instrument</td>
+                <td>💼 Become a successful professional</td>
               </tr>
             </tbody>
           </table>
@@ -71,7 +71,10 @@
         <div class="content-box" id="gallery">
           <h3>Picture Gallery</h3>
           <div class="gallery">
-            <!-- Add images here -->
+            <img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/481865437_617940431220588_1566384181150925618_n.jpg" alt="Image 1">
+            <img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/482194901_1164921068512703_5433057008602376022_n.jpg" alt="Image 2">
+            <img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/482291816_2817193478463738_172566148447157408_n.jpg" alt="Image 3">
+            <img src="https://scontent.fmnl30-3.fna.fbcdn.net/v/t1.15752-9/481401204_28578321155145885_5681485140275656498_n.png" alt="Image 4">
           </div>
         </div>
         <div class="content-box" id="comment">
@@ -101,6 +104,7 @@
 </template>
 
 <script>
+import supabase from "../supabaseClient";
 export default {
   data() {
     return {
@@ -130,111 +134,212 @@ export default {
 };
 </script>
 
-
-
 <style scoped>
-/* General Styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
+body {
   font-family: "Poppins", sans-serif;
-  background-color: #e9ecef;
+  background-color: #f4f4f4;
   color: #333;
 }
 
-.container {
-  height: 100vh;
-  width: 100%;
+.welcome-page {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/022/812/247/non_2x/clouds-and-stars-the-sun-on-a-blue-background-children-s-illustration-of-the-sky-in-a-paper-decorative-style-3d-vector.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.welcome-page h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-page button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+}
+
+.welcome-page button:hover {
+  background-color: #2980b9;
+}
+
+.main-content {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
   padding: 20px;
 }
 
-/* Navigation Bar */
+.content-box {
+  background: white;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 .navbar {
   background: #3498db;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin: 0 15px;
 }
 
 .navbar ul li a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
 }
 
-/* Main Content */
-.main-content {
-  width: 90%;
-  max-width: 1200px;
-  margin-top: 80px; /* Prevents overlap with navbar */
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
 }
 
-/* Section Styling */
-.about-section,
-.education-section,
-.experience-section {
-  background: white;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
-/* IT Experience (Remove Bullets) */
-.experience-section ul {
-  list-style: none;
+th {
+  background: #3498db;
+  color: white;
+}
+
+.gallery {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.gallery img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+.comment-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .comment-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  h3 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #3498db;
+    outline: none;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+  }
+  
+  button:hover:not(:disabled) {
+    background: #2980b9;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .success {
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+.no-bullets {
+  list-style-type: none;
   padding: 0;
 }
 
-.experience-section ul li {
-  padding: 5px 0;
-}
-
-/* Responsive Design */
-@media (min-width: 768px) {
-  .main-content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .about-section {
-    grid-column: span 2;
-  }
-}
-
-@media (min-width: 1024px) {
-  .main-content {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .about-section {
-    grid-column: span 3;
-  }
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 </style>
-
