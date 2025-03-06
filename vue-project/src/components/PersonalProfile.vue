@@ -136,48 +136,52 @@
   </div>
 </template>
 
-  <script>
+<script>
 import supabase from "@/supabaseClient";
 
-  
-  export default {
-    data() {
-      return {
-        name: "",
-        message: "",
-        isSubmitting: false,
-        error: "",
-        success: "",
-      };
+export default {
+  data() {
+    return {
+      showWelcomePage: true, // Added this
+      name: "",
+      message: "",
+      isSubmitting: false,
+      error: "",
+      success: "",
+    };
+  },
+  methods: {
+    enterSite() {
+      this.showWelcomePage = false; // Method to hide welcome page
     },
-    methods: {
-      async submitComment() {
-        this.isSubmitting = true;
-        this.error = "";
-        this.success = "";
-  
-        try {
-          const { error } = await supabase
-            .from("comments")
-            .insert([{ name: this.name, message: this.message }]);
-  
-          if (error) {
-            throw error;
-          }
-  
-          this.name = "";
-          this.message = "";
-          this.success = "Comment submitted successfully!";
-        } catch (error) {
-          this.error = "Failed to submit comment. Please try again.";
-          console.error("Error submitting comment:", error);
-        } finally {
-          this.isSubmitting = false;
+    async submitComment() {
+      this.isSubmitting = true;
+      this.error = "";
+      this.success = "";
+
+      try {
+        const { error } = await supabase
+          .from("comments")
+          .insert([{ name: this.name, message: this.message }]);
+
+        if (error) {
+          throw error;
         }
-      },
+
+        this.name = "";
+        this.message = "";
+        this.success = "Comment submitted successfully!";
+      } catch (error) {
+        this.error = "Failed to submit comment. Please try again.";
+        console.error("Error submitting comment:", error);
+      } finally {
+        this.isSubmitting = false;
+      }
     },
-  };
-  </script>
+  },
+};
+</script>
+
 
       <footer class="footer">
         <div class="social-media">
