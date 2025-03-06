@@ -265,7 +265,7 @@ body {
   object-fit: cover;
   border-radius: 8px;
   border: 4px solid #000; 
-
+}
 
 table {
   width: 100%;
@@ -352,7 +352,7 @@ button:hover {
   border: 1px solid #ddd; 
 }
 
-/* Footer */
+
 .footer {
   background-color: #000; 
   color: #fff; 
