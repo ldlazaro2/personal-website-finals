@@ -142,66 +142,30 @@ export default {
 
 html, body {
   height: 100%;
+  width: 100%;
   font-family: "Poppins", sans-serif;
   background-color: #e9ecef;
   color: #333;
-  overflow: hidden; /* Ensures no scrollbars */
 }
 
 .container {
-  height: 100vh; /* Full-screen height */
+  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-/* Welcome Page */
-.welcome-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100%;
-  text-align: center;
-  background: url('https://i.ytimg.com/vi/RIW_-Ph6DmU/maxresdefault.jpg') no-repeat center center/cover;
-  color: white;
-}
-
-.welcome-page h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.welcome-page button {
-  padding: 12px 24px;
-  font-size: 1rem;
-  background: rgba(52, 152, 219, 0.8);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.welcome-page button:hover {
-  background: rgba(41, 128, 185, 0.9);
-}
-
-/* Main Content */
-.main-content {
-  flex: 1;
   padding: 20px;
-  background: #f4f4f4;
-  overflow-y: auto;
 }
 
 /* Navigation Bar */
 .navbar {
   background: #3498db;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
-  position: sticky;
-  top: 0;
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1000;
 }
 
@@ -209,36 +173,48 @@ html, body {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .navbar ul li a {
   color: white;
   text-decoration: none;
+  font-weight: bold;
 }
 
-/* About Me Section */
+/* Main Content */
+.main-content {
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 80px; /* Prevents overlap with navbar */
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Styling */
 .about-section,
 .education-section,
 .experience-section {
   background: white;
   padding: 20px;
-  margin: 15px 0;
+  margin-bottom: 15px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* IT Experience (Removing Bullets) */
+/* IT Experience (Remove Bullets) */
 .experience-section ul {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
 }
 
 .experience-section ul li {
   padding: 5px 0;
 }
 
-/* Responsive Layout */
+/* Responsive Design */
 @media (min-width: 768px) {
   .main-content {
     display: grid;
@@ -260,84 +236,5 @@ html, body {
     grid-column: span 3;
   }
 }
-
-.comment-form {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .comment-form:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  h3 {
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    font-weight: 600;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input,
-  textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
-  }
-  
-  input:focus,
-  textarea:focus {
-    border-color: #3498db;
-    outline: none;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    font-size: 1.2rem;
-    background: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  button:disabled {
-    background: #95a5a6;
-    cursor: not-allowed;
-  }
-  
-  button:hover:not(:disabled) {
-    background: #2980b9;
-  }
-  
-  .error {
-    color: red;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .success {
-    color: green;
-    text-align: center;
-    margin-top: 10px;
-  }
-
 </style>
+
