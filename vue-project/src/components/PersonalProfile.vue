@@ -167,16 +167,20 @@ body {
 }
 
 .welcome-page button {
-  padding: 15px 30px;
-  font-size: 1.2rem;
+  padding: 12px 20px;
+  font-size: 1rem;
   background-color: #3498db;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); 
+  width: auto;=
+  min-width: 150px;
+  text-align: center;
 }
+
 
 .welcome-page button:hover {
   background-color: #2980b9;
