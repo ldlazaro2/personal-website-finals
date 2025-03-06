@@ -31,7 +31,8 @@
   </template>
   
   <script>
-  import supabase from "../supabaseClient";
+import supabase from "@/supabaseClient";
+
   
   export default {
     data() {
