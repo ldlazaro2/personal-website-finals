@@ -84,28 +84,80 @@
             <img src="https://via.placeholder.com/300x200" alt="Image 4">
           </div>
         </div>
-        <div class="content-box" id="comment">
-          <h3>Leave a Comment</h3>
-          <form @submit.prevent="submitComment">
-            <label for="name">Name:</label>
-            <input type="text" id="name" v-model="comment.name" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" v-model="comment.message" required></textarea>
-
-            <button type="submit">Submit</button>
-          </form>
-
-          <div class="comments">
-            <h4>Comments:</h4>
-            <ul class="no-bullets">
-              <li v-for="(comment, index) in comments" :key="index">
-                <strong>{{ comment.name }}:</strong> {{ comment.message }}
-              </li>
-            </ul>
-          </div>
+        <template>
+    <div class="comment-form">
+      <h3>Leave a Comment</h3>
+      <form @submit.prevent="submitComment">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            v-model="name"
+            placeholder="Your name"
+            required
+          />
         </div>
-      </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea
+            id="message"
+            v-model="message"
+            placeholder="Your message"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" :disabled="isSubmitting">
+          {{ isSubmitting ? "Submitting..." : "Submit" }}
+        </button>
+      </form>
+      <p v-if="error" class="error">{{ error }}</p>
+      <p v-if="success" class="success">{{ success }}</p>
+    </div>
+  </template>
+  
+  <script>
+import supabase from "@/supabaseClient";
+
+  
+  export default {
+    data() {
+      return {
+        name: "",
+        message: "",
+        isSubmitting: false,
+        error: "",
+        success: "",
+      };
+    },
+    methods: {
+      async submitComment() {
+        this.isSubmitting = true;
+        this.error = "";
+        this.success = "";
+  
+        try {
+          const { error } = await supabase
+            .from("comments")
+            .insert([{ name: this.name, message: this.message }]);
+  
+          if (error) {
+            throw error;
+          }
+  
+          this.name = "";
+          this.message = "";
+          this.success = "Comment submitted successfully!";
+        } catch (error) {
+          this.error = "Failed to submit comment. Please try again.";
+          console.error("Error submitting comment:", error);
+        } finally {
+          this.isSubmitting = false;
+        }
+      },
+    },
+  };
+  </script>
 
       <!-- Footer -->
       <footer class="footer">
