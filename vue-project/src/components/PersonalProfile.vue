@@ -79,7 +79,8 @@
   </div>
 </template>
 <style scoped>
-/* Global Styles */
+<style scoped>
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -92,11 +93,18 @@ body {
   color: #333;
 }
 
+/* Full Page Container */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4; /* Removed broken image */
+}
+
 /* Welcome Page */
 .welcome-page {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -108,22 +116,17 @@ body {
   text-align: center;
 }
 
-.welcome-page h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-/* Fixing the Enter Site Button */
+/* Fixing the Enter Button */
 .welcome-page button {
-  padding: 10px 20px;
-  font-size: 1.2rem;
+  padding: 12px 24px;
+  font-size: 1rem;
   background: #e74c3c;
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s;
-  width: auto; /* Make button size based on content */
+  transition: background 0.3s, transform 0.2s;
+  width: 200px;
 }
 
 .welcome-page button:hover {
@@ -133,17 +136,19 @@ body {
 
 /* Main Content */
 .main-content {
-  display: none; /* Hidden initially */
+  width: 100%;
   padding: 20px;
+  background: white;
 }
 
 /* Navigation Bar */
 .navbar {
   background: #e74c3c;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
   position: sticky;
   top: 0;
+  width: 100%;
   z-index: 1000;
 }
 
@@ -157,8 +162,8 @@ body {
 .navbar ul li a {
   color: white;
   text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
+  font-size: 1rem;
+  transition: color 0.3s;
 }
 
 .navbar ul li a:hover {
@@ -182,84 +187,6 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* About Me */
-#about {
-  grid-column: span 2;
-  text-align: center;
-}
-
-/* Hobbies & Goals + Connect With Me (Side by Side) */
-#hobbies,
-#connect {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-#hobbies {
-  grid-column: 1 / span 1;
-}
-
-#connect {
-  grid-column: 2 / span 1;
-}
-
-/* Picture Gallery */
-.gallery {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  padding: 10px;
-  justify-content: center;
-}
-
-.gallery img {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 5px;
-  transition: transform 0.3s;
-}
-
-.gallery img:hover {
-  transform: scale(1.1);
-}
-
-/* Comments Section */
-#comment {
-  text-align: center;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-form input,
-form textarea {
-  width: 90%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-form button {
-  padding: 10px 15px;
-  font-size: 1rem;
-  background: #e74c3c;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background: #c0392b;
-}
-
 /* Responsive Design */
 @media (min-width: 768px) {
   .grid-container {
@@ -270,14 +197,6 @@ form button:hover {
 @media (min-width: 1024px) {
   .grid-container {
     grid-template-columns: repeat(3, 1fr);
-  }
-  
-  #about {
-    grid-column: span 3;
-  }
-
-  #hobbies, #connect {
-    grid-column: span 1;
   }
 }
 </style>
