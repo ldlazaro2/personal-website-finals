@@ -153,14 +153,51 @@ export default {
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #f5f5f5; 
+  color: #333; 
   line-height: 1.6;
 }
 
-/* NAVIGATION BAR */
-.navbar {
+.welcome-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.welcome-page h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.welcome-page button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #fff; 
+  color: #000; 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.welcome-page button:hover {
+  background-color: #333; 
+  color: #fff;
+}
+
+.main-content {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.navbar {
+  background-color: #333; /* Darker background for better contrast */
   padding: 15px;
   text-align: center;
   margin-bottom: 20px;
@@ -174,53 +211,60 @@ body {
 }
 
 .navbar ul li a {
-  color: #fff;
+  color: #fff; /* White text for better contrast */
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
   transition: color 0.3s ease;
-  padding: 10px 15px;
-  border-radius: 5px;
 }
 
 .navbar ul li a:hover {
-  color: #ccc;
-  background-color: rgba(255, 255, 255, 0.1);
+  color: #ccc; /* Lighter color on hover */
 }
 
-/* MAIN CONTENT */
-.main-content {
-  padding: 20px;
+.content-box {
   background-color: #fff;
-  max-width: 900px;
-  margin: auto;
+  padding: 20px;
+  margin: 20px 0;
   border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ABOUT ME SECTION */
+.content-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 .about-me-container {
   display: flex;
+  gap: 20px;
   align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  margin: 30px 0;
 }
 
 .about-me-text {
   flex: 2;
-  font-size: 1rem;
 }
 
 .about-me-image img {
   width: 200px;
-  height: 250px;
+  height: 400px;
   object-fit: cover;
   border-radius: 8px;
-  border: 4px solid #000;
+  border: 4px solid #000; 
 }
 
-/* TABLE STYLING */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -234,33 +278,10 @@ th, td {
 }
 
 th {
-  background-color: #000;
-  color: #fff;
+  background-color: #000; 
+  color: #fff; 
 }
 
-/* BUTTON STYLING */
-button {
-  padding: 10px 15px;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #333;
-}
-
-button:disabled {
-  background-color: #444;
-  color: #aaa;
-  cursor: not-allowed;
-}
-
-/* GALLERY */
 .gallery {
   display: flex;
   gap: 15px;
@@ -273,7 +294,7 @@ button:disabled {
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  border: 4px solid #000;
+  border: 4px solid #000; 
   transition: transform 0.3s ease;
 }
 
@@ -281,18 +302,82 @@ button:disabled {
   transform: scale(1.05);
 }
 
-/* FOOTER */
-.footer {
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #000; 
+  outline: none;
+}
+
+button {
+  padding: 10px;
   background-color: #000;
   color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #333; 
+}
+
+.no-bullets {
+  list-style: none;
+  padding: 0;
+}
+
+.no-bullets li {
+  background-color: #f5f5f5; 
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ddd; 
+}
+
+.footer {
+  background-color: #000; 
+  color: #fff; 
   text-align: center;
   padding: 20px;
   margin-top: 40px;
 }
 
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.social-media img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+  transform: scale(1.1);
+}
+
 .footer p {
   margin: 0;
   font-size: 0.9rem;
-  color: #ccc;
+  color: #ccc; 
 }
 </style>
