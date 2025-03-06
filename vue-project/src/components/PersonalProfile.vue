@@ -176,8 +176,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); 
-  width: auto;=
-  min-width: 150px;
+  width: fit-content;
   text-align: center;
 }
 
